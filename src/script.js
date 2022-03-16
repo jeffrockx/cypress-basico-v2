@@ -4,7 +4,7 @@ const phoneLabelSpan = document.querySelector('.phone-label-span')
 const phoneField = document.getElementById('phone')
 
 document.querySelector('#phone-checkbox')
-  .addEventListener('change', function() {
+  .addEventListener('change', function () {
     if (this.checked) {
       phoneLabelSpan.style.display = 'inline'
       phoneField.required = !isPhoneRequired
@@ -17,9 +17,9 @@ document.querySelector('#phone-checkbox')
   })
 
 document.querySelector('button[type="submit"]')
-  .addEventListener('click', function(event) {
+  .addEventListener('click', function (event) {
     event.preventDefault()
-    const firstNameField = document.getElementById('firstName')
+    const firstNameField = document.getElementByIdd('firstName')
     const lastNameField = document.getElementById('lastName')
     const emailField = document.getElementById('email')
     const textareaField = document.getElementById('open-text-area')
@@ -51,20 +51,20 @@ document.querySelector('button[type="submit"]')
     phoneLabelSpan.style.display = 'none'
     successMessage.style.display = 'block'
     isPhoneRequired = false
-    scroll(0,0)
+    scroll(0, 0)
     hideMessageAfterTimeout(successMessage)
   }, false)
 
 function showAndHideErrorMessage() {
   const errorMessage = document.querySelector('.error')
   errorMessage.style.display = 'block'
-  scroll(0,0)
+  scroll(0, 0)
   hideMessageAfterTimeout(errorMessage)
   return
 }
 
 function hideMessageAfterTimeout(element) {
-  setTimeout(function() {
+  setTimeout(function () {
     element.style.display = 'none'
   }, 3000)
 }
